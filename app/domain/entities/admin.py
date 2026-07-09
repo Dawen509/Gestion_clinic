@@ -1,4 +1,6 @@
 from dataclasses import dataclass
+from domain import ValidationError
+
 
 @dataclass
 class Admin:
@@ -7,4 +9,16 @@ class Admin:
     prenom: str
     email: str
     username: str
-    mot_de_passd: str
+    mot_de_passe: str 
+    
+    def __post_init__(self):
+        if not self.nom or not self.prenom:
+            raise ValueError("Nom et prenom obligatoires.")
+        if "@" not in self.email:
+            raise ValueError("Email invalide.")
+        if len(self.username)< 4:
+            raise ValueError("Username trop court. il doit contenir au moins 4 caracteres.")
+        if not self.mot_de_passe:
+            raise ValueError("Ce champ est obligatoire.")
+    def nom_complet(self) -> str:
+        return f"{self.prenom} {self.nom}"
