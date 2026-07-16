@@ -1,12 +1,13 @@
 from dataclasses import dataclass
-from domain import ValidationError
+raise ValueError("Nom et prenom obligatoires.")
+raise ValueError("Email invalide.") 
 
 
 @dataclass
 class Admin:
     id: int
     nom: str
-    prenom: str
+    prenom: str 
     email: str
     username: str
     mot_de_passe: str 
@@ -21,4 +22,4 @@ class Admin:
         if not self.mot_de_passe:
             raise ValueError("Ce champ est obligatoire.")
     def nom_complet(self) -> str:
-        return f"{self.prenom} {self.nom}"
+        return f"{self.prenom} {self.nom}" 

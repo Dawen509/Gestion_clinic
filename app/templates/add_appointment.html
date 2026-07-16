@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter un rendez-vous</title>
+</head>
+<body>
+    <h1>Ajouter un rendez-vous</h1>
+
+    <form method="POST" action="/add_appointment">
+        <label for="patient_id">ID Patient :</label>
+        <input type="number" id="patient_id" name="patient_id" required><br><br>
+
+        <label for="doctor_id">ID Docteur :</label>
+        <input type="number" id="doctor_id" name="doctor_id" required><br><br>
+
+        <label for="date_rendezvous_">Date du rendez-vous :</label>
+        <input type="date" id="date_rendezvous_" name="date_rendezvous_" required><br><br>
+
+        <label for="time">Heure :</label>
+        <input type="text" id="time" name="time" placeholder="ex: 14:30" required><br><br>
+
+        <label for="motif">Motif :</label>
+        <input type="text" id="motif" name="motif" required><br><br>
+
+        <button type="submit">Enregistrer</button>
+    </form>
+
+    <p><a href="/">Retour à l'accueil</a></p>
+</body>
+</html>

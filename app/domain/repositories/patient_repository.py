@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-class patientRepository:
+class patientRepository(ABC):
     pass    
 
     @abstractmethod
@@ -15,3 +15,4 @@ class patientRepository:
     @abstractmethod
     def delete(self, patient_id):
         pass 
+    

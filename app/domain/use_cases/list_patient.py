@@ -1,6 +1,6 @@
-class ListPatient:
-    def __init_(self, aptient_repository):
-        self.patient_repository =self.patient_repository
+class ListPatients:
+    def __init__(self, patient_repository):
+        self.patient_repository = patient_repository
 
-    def execte(self):
-        return self.patient_repository.get_all() 
+    def execute(self):
+         return self.patient_repository.find_all() 

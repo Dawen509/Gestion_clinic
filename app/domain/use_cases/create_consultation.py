@@ -1,10 +1,8 @@
-class Createconsultation:
-    def _init_(self, consultation_repository):
-        self.consulation_repository = self.consulation_repository
-    def execute(self, appointment_id, diagnostic, treatmnt):
-        consultation = {
-            "appointment_id":appointment_id,
-            "diagnostic": diagnostic,
-            "treatment": treatmnt 
-        }         
-        return self.consulation_repository.create(consultation)
+from app.domain.entities.consultation import Consultation
+
+class CreateConsultation:
+    def __init__(self, consultation_repository):
+        self.consultation_repository = consultation_repository
+
+    def execute(self, consultation):
+        return self.consultation_repository.create(consultation) 
